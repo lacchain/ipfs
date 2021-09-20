@@ -1,0 +1,9 @@
+---
+- name: install golang
+  import_tasks: "install-go.yaml"
+
+- name: install besu
+  import_tasks: "install-ipfs.yaml"
+
+- name: init besu
+  import_tasks: "init-ipfs.yaml"
