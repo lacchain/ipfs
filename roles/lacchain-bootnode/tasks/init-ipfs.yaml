@@ -31,7 +31,18 @@
     dest: /lib/systemd/system/ipfs.service
     mode: 0775
 
+- name: Copy swarm.key
+  copy:
+    src: "{{ role_path }}/files/swarm.key"
+    dest: "{{ ipfs_swarm }}/swarm.key"
+    mode: 0550
+
 - name: Enable service ipfs
   service:
     name: ipfs
     enabled: yes
+
+- name: Start service ipfs, if not running
+  service:
+    name: ipfs
+    state: started
