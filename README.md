@@ -61,11 +61,15 @@ Make sure you have SSH access to nodes you're setting up. This step will vary de
     ```
 ### Deploying the new node ###
 
-* To deploy a IPFS peers on node **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a IPFS peers on **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-bootnode.yml
 
+* To deploy a IPFS peers on  **writer node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-writer.yml
 
 # Contact
 

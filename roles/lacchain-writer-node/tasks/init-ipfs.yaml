@@ -1,0 +1,49 @@
+- name: init ipfs
+  debug:
+    msg:
+    - "Init IPFS"
+
+- name: init ipfs
+  shell: ipfs init
+
+- name: version ipfs
+  shell: ipfs version
+
+- name: Copy bootstrap list file
+  copy:
+    src: "{{ role_path }}/files/bootstrap_list"
+    dest: /tmp/
+    mode: 0440
+
+- name: remove bootstrap
+  shell: ipfs bootstrap rm --all
+
+- name: add bootstrap
+#  shell: ipfs bootstrap add /ip4/192.168.10.1/tcp/4001/ipfs/QmQVvZEmvjhYgsyEC7NvMn8EWf131EcgTXFFJQYGSz4Y83
+  shell: cat /tmp/bootstrap_list | ipfs bootstrap add
+
+- name: set private network
+  shell: export LIBP2P_FORCE_PNET=1
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/ipfs.service"
+    dest: /lib/systemd/system/ipfs.service
+    mode: 0775
+
+- name: Copy swarm.key
+  copy:
+    src: "{{ role_path }}/files/swarm.key"
+    dest: "{{ ipfs_swarm }}/swarm.key"
+    mode: 0550
+
+- name: Enable service ipfs
+  service:
+    name: ipfs
+    enabled: yes
+
+
+- name: Start service ipfs, if not running
+  service:
+    name: ipfs
+    state: started

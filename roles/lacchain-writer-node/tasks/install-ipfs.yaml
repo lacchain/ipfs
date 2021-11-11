@@ -1,0 +1,24 @@
+- name: install ipfs
+  debug:
+    msg:
+    - "Installing IPFS"
+
+- name: download ipfs tar
+  get_url:
+    url: "https://dist.ipfs.io/go-ipfs/{{ipfs_rel}}/go-ipfs_{{ipfs_rel}}_linux-amd64.tar.gz"
+    dest: "/tmp/"
+    mode: 0440
+
+- name: Extract the IPFS tarball
+  unarchive:
+    src: "/tmp/go-ipfs_{{ipfs_rel}}_linux-amd64.tar.gz"
+    dest: /tmp/
+    copy: no
+
+- name: Move executable
+  shell: mv /tmp/go-ipfs/ipfs /usr/local/bin/ipfs
+
+- name: clean downloaded files
+  file:
+    path: "/tmp/go-ipfs_{{ipfs_rel}}_linux-amd64.tar.gz"
+    state: absent

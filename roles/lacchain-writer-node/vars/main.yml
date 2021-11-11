@@ -1,0 +1,8 @@
+---
+# vars file for lacchain-regular-node
+go_rel: "go1.17.2.linux-amd64.tar.gz"
+gohome: "/usr/local/go"
+file_owner: quorum
+new_go_version: "1.9.5"
+
+ipfs_rel: "v0.10.0"
