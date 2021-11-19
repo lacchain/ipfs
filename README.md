@@ -1,6 +1,6 @@
 # Deploy IPFS on NODE Lacchain 
 
-* Bellow you will find instructions about deployment  ipfs  peers on nodes lacchain using Ansible. This implies that it will be executed from a local machine to a remote server. The local machine and the remote server will communicate via ssh.
+* Bellow you will find instructions about deployment  of ipfs  peers on nodes lacchain using Ansible. This implies that it will be executed from a local machine to a remote server. The local machine and the remote server will communicate via ssh.
 
 * The installation with ansible provided is compatible with **Ubuntu** and **Centos7**
 ## Minimum System Requirements
@@ -20,9 +20,9 @@ It is necessary to enable the following network ports in the machine in which we
 * **IPFS Peers**:
   * **4001**: TCP - Port to establish Communication p2p with other peers.
 
-  * **5001**: TCP - API Server
+  * **5001**: TCP - API Server.
 
-  * **8080**: TCP - Gateway server
+  * **8080**: TCP - Gateway server.
 
 ## Pre-requisites
 
