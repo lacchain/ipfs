@@ -6,4 +6,3 @@ file_owner: quorum
 new_go_version: "1.9.5"
 
 ipfs_rel: "v0.10.0"
-ipfs_swarm: "/root/.ipfs"

@@ -42,6 +42,7 @@
     name: ipfs
     enabled: yes
 
+
 - name: Start service ipfs, if not running
   service:
     name: ipfs

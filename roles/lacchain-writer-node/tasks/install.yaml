@@ -1,0 +1,9 @@
+---
+- name: install golang
+  import_tasks: "install-go.yaml"
+
+- name: install ipfs
+  import_tasks: "install-ipfs.yaml"
+
+- name: init ipfs
+  import_tasks: "init-ipfs.yaml"
