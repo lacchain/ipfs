@@ -1,6 +1,6 @@
 # Deploy IPFS on NODE Lacchain 
 
-* Bellow you will find instructions on for the deployment a ipfs  peers on nodes lacchain using Ansible. This implies that it will be executed from a local machine on a remote server. The local machine and the remote server will communicate via ssh.
+* Bellow you will find instructions about deployment  ipfs  peers on nodes lacchain using Ansible. This implies that it will be executed from a local machine to a remote server. The local machine and the remote server will communicate via ssh.
 
 * The installation with ansible provided is compatible with **Ubuntu** and **Centos7**
 ## Minimum System Requirements
@@ -15,7 +15,7 @@ Recommended hardware features for ipfs peers :
 
 * **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Centos7, always 64 bits
 
-It is necessary to enable the following network ports in the machine in which we are going to deploy the node:
+It is necessary to enable the following network ports in the machine in which we are going to deploy ipfs peers:
 
 * **IPFS Peers**:
   * **4001**: TCP - Port to establish Communication p2p with other peers.
@@ -28,7 +28,7 @@ It is necessary to enable the following network ports in the machine in which we
 
 ### Install Ansible ###
 
-For this installation we will use Ansible. It is necessary to install Ansible on a **local machine** that will perform the installation of the node on a **remote machine**.
+For this installation we will use Ansible. It is necessary to install Ansible on a **local machine** that will perform the installation of the peers on a **remote machine**.
 
 Following the instructions to [install ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) in your local machine.
 
@@ -47,11 +47,11 @@ Make sure you have SSH access to nodes you're setting up. This step will vary de
 
 ## IPFS Installation ##
 
-### Preparing installation of a new  ipfs node ###
+### Preparing installation of a new  ipfs peers on node ###
 
 * There are two types of lacchain nodes (Bootnode /  Writer ) that can  deploy ipfs peers.
 
-* After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
+* After cloning the repository on the **local machine**, edit `inventory` file  to add a line for the remote server where you are deploying the new ipfs peers. You can do it with a graphical tool or inside the shell:
 
     ```shell
     $ cd ipfs/
